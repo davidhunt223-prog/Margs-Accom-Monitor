@@ -7,14 +7,14 @@ on:
 
 jobs:
   run-monitor:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04 # Pins to a stable LTS runner to eliminate the ubuntu-latest migration notice
 
     steps:
       - name: Check out repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v4.2.2 # Uses the latest Node 24-compatible patch release
 
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v5.4.0
         with:
           python-version: '3.11'
           cache: 'pip'
